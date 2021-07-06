@@ -36,7 +36,7 @@ module.exports = {
     host: 'localhost',
     port: 3306,
     user: 'user',
-    password: 'DeAmsN6N',
+    password: 'change it with ur password',
     database: 'quizz',
   },
   postProcessResponse: camelcaseOverloaded,

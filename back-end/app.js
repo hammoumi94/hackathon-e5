@@ -1,10 +1,11 @@
-const express = require('express')
-const app= express()
+/* eslint-disable no-console */
+const app = require('./config/express');
 
-app.listen(3000,()=>{
-    console.log('im alive')
-})
+console.time('app-start');
 
-app.get('/test',(req,res)=>{
-    res.sendStatus(200)
-})
+const server = app.listen(5000, () => {
+  console.info('--- Started ---');
+  console.timeEnd('app-start');
+});
+
+module.exports = server;

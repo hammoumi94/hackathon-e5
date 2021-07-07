@@ -1,53 +1,17 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import Ap from './App';
-import './style.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      quiz: [
-        {
-          question: "How tall are you?",
-          options: ["a1", "b1", "c1", "d1"],
-          answer: "1"
-        },{
-          question: "How fast are you?",
-          options: ["a2", "b2", "c2", "d2"],
-          answer: "1"
-        },{
-          question: "How heavy are you?",
-          options: ["a3", "b3", "c3", "d3"],
-          answer: "1"
-        },{
-          question: "How heavy are you?",
-          options: ["a3", "b3", "c3", "d3"],
-          answer: "1"
-        },{
-          question: "How heavy are you?",
-          options: ["a3", "b3", "c3", "d3"],
-          answer: "1"
-        },{
-          question: "How heavy are you?",
-          options: ["a3", "b3", "c3", "d3"],
-          answer: "1"
-        },{
-          question: "How heavy are you?",
-          options: ["a3", "b3", "c3", "d3"],
-          answer: "1"
-        }
-      ]
-    };
-  }
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-  render() {
-    return (
-      <div className="background">
-        <Ap quiz={this.state.quiz}/>
-      </div>
-    );
-  }
-}
-
-render(<App />, document.getElementById('root'));
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

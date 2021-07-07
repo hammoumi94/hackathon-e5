@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios';
 
-const API_URL = '127.0.0.1:5000';
+const API_URL = 'http://localhost:5000';
 
 const list = async () => {
   try {

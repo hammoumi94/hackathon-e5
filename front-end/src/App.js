@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import LiveHelp from '@material-ui/icons/LiveHelp';
-import RaisedButton from 'material-ui/RaisedButton';
-import Radio from 'material-ui/Radio';
+import { Button } from '@material-ui/core';
+import { Radio } from '@material-ui/core';
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -16,7 +16,7 @@ const styles = theme => ({
  
     margin: "0 auto"
   }),
-  RaisedButton:{
+  Button:{
     pointerEvents: "none",
     boxShadow: "none"
   },
@@ -85,15 +85,15 @@ this.refs[this.state.selectedValue].style.background = "lightcoral";
     var curQuestion = this.state.current + 1;
     var size = this.state.quiz.length;
     var moveRight = this.state.current+1 < this.state.quiz.length;
-    var moveLeft = this.state.current == 0;
+    var moveLeft = this.state.current === 0;
 
   return (
     <div>
       <Paper className={this.props.classes.root} elevation={4}>
         <Typography component="p">
-          <RaisedButton variant="fab" color="primary" aria-label="add" className={this.props.classes.RaisedButton}>
+          <Button variant="fab" color="primary" aria-label="add" className={this.props.classes.Button}>
            <LiveHelp />
-           </RaisedButton>
+           </Button>
           <span className={this.props.classes.questionMeta}> Question # {curQuestion} / {size}</span>
          
         </Typography>
@@ -109,27 +109,27 @@ this.refs[this.state.selectedValue].style.background = "lightcoral";
           checked={this.state.selectedValue === index.toString()}
           onChange={this.handleChange}
           value={index.toString()}
-          name="radio-RaisedButton-demo"
+          name="radio-Button-demo"
           aria-label="A"
         />
         {opt}
         </div>
         ))}
 <div className={this.props.classes.footer}>
-         <RaisedButton onClick={this.revealCorrect} variant="raised" color="secondary">
+         <Button onClick={this.revealCorrect} variant="raised" color="secondary">
         Submit
-      </RaisedButton>
-      {(moveRight)? (<RaisedButton onClick={this.moveNext} variant="raised" color="primary" style={{float: "right"}}>
+      </Button>
+      {(moveRight)? (<Button onClick={this.moveNext} variant="raised" color="primary" style={{float: "right"}}>
         Next
-      </RaisedButton>): (<RaisedButton onClick={this.moveNext} disabled variant="raised" color="primary" style={{float: "right"}}>
+      </Button>): (<Button onClick={this.moveNext} disabled variant="raised" color="primary" style={{float: "right"}}>
         Next
-      </RaisedButton>)}
+      </Button>)}
 
-      {(moveLeft)? ( <RaisedButton onClick={this.movePrevious} disabled variant="raised" color="primary" style={{float: "right", marginRight: "50px"}}>
+      {(moveLeft)? ( <Button onClick={this.movePrevious} disabled variant="raised" color="primary" style={{float: "right", marginRight: "50px"}}>
         Previous
-      </RaisedButton>): ( <RaisedButton onClick={this.movePrevious} variant="raised" color="primary" style={{float: "right", marginRight: "50px"}}>
+      </Button>): ( <Button onClick={this.movePrevious} variant="raised" color="primary" style={{float: "right", marginRight: "50px"}}>
         Previous
-      </RaisedButton>)}
+      </Button>)}
 
      
 </div>
